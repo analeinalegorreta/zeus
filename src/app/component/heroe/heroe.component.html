@@ -1,0 +1,24 @@
+<h1 class="animated fadeIn">{{heroe.nombre | uppercase}} </h1>
+<hr>
+
+<div class="card mb-3 animated fadeIn fast" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="heroe.img" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{heroe.nombre}}</h5>
+                <p class="card-text">{{heroe.bio}}</p>
+                <p class="card-text"><small class="text-muted">{{heroe.aparicion | date:'y'}}</small></p>
+            </div>
+            <div>
+                <img *ngIf="heroe.casa=='DC'" class="lunas m-2" src="assets/img/luna.png" alt="">
+                <img *ngIf="heroe.casa=='Marvel'" class="lunas m-2" src="assets/img/luna1.png" alt="">
+            </div>
+            <div>
+                <a [routerLink]="['/heroinas']" class="btn btn-outline-success btn-block m-2">Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>

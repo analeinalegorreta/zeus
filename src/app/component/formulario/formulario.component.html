@@ -1,0 +1,169 @@
+<div class="container_primary">
+    <div class="tituloNuevo">
+        Contacto
+    </div>
+    <form action="" autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+        <div class="form_container">
+            <div>
+                <div class="form_group">
+                    <label for="tipo" class="form_label">*Tipo</label>
+                    <select name="" id="tipo" class="form_input" (change)="selectItem($event)" formControlName="tipo"
+                    [ngClass]="{'form_input':tipoValido==false, 'inputInvalido':tipoValido==true}">
+                        <option value="" disabled="disabled"> </option>
+                        <option *ngFor="let tipo of tipoCombo;let i = index"
+                            [ngClass]="{'selected': i===selectedIndex}">
+                            {{tipo}}
+                        </option>
+                    </select>
+                    <small *ngIf="tipoValido" class="text-danger">
+                        Campo obligatorio*
+                    </small>
+                </div>
+                
+
+                <div class="form_group">
+                    <label for="nombre" class="form_label">*Nombre</label>
+                    <input type="text"  id="nombre" class="form_input " placeholder=""
+                        formControlName="nombre" [class.is-invalid]="inputInvalido"
+                        [ngClass]="{'form_input':inputInvalido==false, 'inputInvalido':inputInvalido==true}"
+                        >
+
+                        <small *ngIf="inputInvalido" class="text-danger">
+                            Campo obligatorio*
+                        </small>
+                        <small *ngIf="nombreLeinaInvalido" class="text-danger">
+                            leina no es valido*
+                        </small>
+
+                        <small *ngIf="nombreLegorretaInvalido" class="text-danger">
+                            legorreta no es valido*
+                        </small>
+                </div>
+                <div class="form_group">
+                    <label for="mail" class="form_label">*Email</label>
+                    <input type="text"  id="mail" class="form_input " placeholder="" formControlName="email"
+                        [class.is-invalid]="emailValido"
+                        [ngClass]="{'form_input':emailValido==false, 'inputInvalido':emailValido==true}"
+                        >
+                     <small *ngIf="emailValido" class="text-danger">
+                            Campo obligatorio*
+                        </small>
+                </div>
+                <div class="form_group">
+                    <label for="layout" class="form_label">Se envia Layout</label>
+                    <select name="" id="layout" class="form_input" (change)="selectItemLayout($event)"
+                        formControlName="layout" [class.is-invalid]="leyautValido"
+                        [ngClass]="{'form_input':leyautValido==false, 'inputInvalido':leyautValido==true}">
+                        <option>Si</option>
+                        <option>No</option>
+                    </select>
+
+                     <small *ngIf="leyautValido" class="text-danger">
+                            Campo obligatorio*
+                        </small>
+                </div>
+            </div>
+
+            <div>
+
+                <div class="form_group">
+                    <img src="assets/img/plusCircle.svg" alt="yoast seo" height="20" width="20"
+                        class="iconoAgreTipo" />
+                </div>
+                <div class="form_group">
+                    <label for="tel" class="form_label">*Tel. Ext.</label>
+                    <input type="text"  id="tel" class="form_input " placeholder=""
+                        formControlName="telefono" [class.is-invalid]="telefonoValido" OnlyNumber
+                        [ngClass]="{'form_input':telefonoValido==false, 'inputInvalido':telefonoValido==true}">
+
+                     <small *ngIf="telefonoValido" class="text-danger">
+                            Campo obligatorio*
+                        </small>
+                </div>
+                <div class="form_group">
+                    <label for="puesto" class="form_label">*Puesto</label>
+                    <input type="number"  id="puesto" class="form_input " placeholder=""
+                        formControlName="puesto" [class.is-invalid]="puestoValido"
+                        [ngClass]="{'form_input':puestoValido==false, 'inputInvalido':puestoValido==true}">
+
+                     <small *ngIf="puestoValido" class="text-danger">
+                            Campo obligatorio*
+                        </small>
+                </div>
+
+                <!-- <div class="form_group">
+                    <input type="text" type="text" id="prueba" class="form_input " placeholder=""
+                        formControlName="prueba" [class.is-invalid]="pruebaValido">
+                </div>
+                <input type="text" type="text" id="prueba2" class=" " placeholder=""
+                    formControlName="prueba2" [class.is-invalid]="pruebaValido2"> -->
+            </div>
+
+        </div>
+        <button type="submit" class="" value="Agregar"
+            [ngClass]="{'form_submit':verificarValides()==false, 'form_submit_inv':verificarValides()==true}">
+            <img src="assets/img/plus.svg" alt="yoast seo" height="20" width="20" class="iconoAgre" /> Agregar
+        </button>
+
+
+        <br><br>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"   (click)="crearListener()">
+            <label class="form-check-label" >Activar o desactivar Notificacion</label>
+          </div>
+
+    </form>
+
+
+    <br><br> <br><br>
+
+<div class="row">
+    <div class="col-6">
+        <div class="prueba">
+            <label for="nombre" class="prueba2">Cuenta Instrumental</label>
+            <div class="row m-1">
+                <div class="col-6 ">
+                    <div class="form_group">
+                        <label for="nombre" class="form_label">Cuenta</label>
+                        <input type="text" type="text" id="nombre" class="form_input " placeholder="">
+    
+                        <span class="form_line"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form_group">
+                        <label for="nombre" class="form_label">Titular</label>
+                        <input type="text" type="text" id="nombre" class="form_input " placeholder="">
+    
+                        <span class="form_line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="prueba">
+            <label for="nombre" class="prueba2">Cuenta Concentradora</label>
+            <div class="row m-1">
+                <div class="col-6 ">
+                    <div class="form_group">
+                        <label for="nombre" class="form_label">Cuenta </label>
+                        <input type="text" type="text" id="nombre" class="form_input " placeholder="">
+    
+                        <span class="form_line"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form_group">
+                        <label for="nombre" class="form_label">Titular</label>
+                        <input type="text" type="text" id="nombre" class="form_input " placeholder="">
+    
+                        <span class="form_line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
