@@ -1,0 +1,56 @@
+.titulosv{
+    color: #278252;
+    font-weight: bold;
+}
+.subtitle{
+    color: #adacac;
+    font-size: 11px;
+}
+
+.siNo{
+    font-weight: bold;
+    font-size: 12px;
+    color: #756f6f;
+}
+
+.form_group {
+    position: relative;
+    --color: #5757577e;
+    margin-bottom: 5%;
+
+}
+
+
+
+.form_input {
+    width: 100%;
+    background: none;
+    color: #adacac;
+    font-size: 1rem;
+    padding: .3em .3em;
+    border-radius: .4em;
+    outline: none;
+    border: 1px solid var(--color);
+}
+
+.form_label {
+    transform: translateY(16px) scale(.7);
+    transform-origin: left top;
+    background-color: #fff;
+    padding: 0% 1% 0% 1%;
+    margin-left: 2%;
+    color: #adacac;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

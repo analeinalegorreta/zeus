@@ -1,0 +1,14 @@
+<h1>Creacion y Edicion de Usuarios </h1>
+<hr>
+<div class="row">
+  <div class="col-6">
+    <app-usuario-lista [charactersList]="usuarioService.character"
+    (onIndex)="usuarioService.deleteCharacterById($event)"></app-usuario-lista>
+
+  </div>
+
+  <div class="col-6">
+    <app-agregar-n-usu (onNewCharacter)="usuarioService.onNewCharacter($event)"></app-agregar-n-usu>
+
+  </div>
+</div>

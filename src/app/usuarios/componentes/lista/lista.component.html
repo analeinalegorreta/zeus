@@ -1,0 +1,26 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <li
+  *ngFor="
+  let usuario of charactersList;
+  let i=index;
+  let isFirst=first;
+  let isLast=last;
+  let isEven=even;
+  let isOdd=odd;
+  "
+  class="list-group-item d-flex justify-content-between align-item-center"
+  [ngClass]="{'list-group-item-success':isFirst}"
+  >
+  <div>
+    <span class="text-primary">{{i+1}} - </span>
+    <span>{{usuario.name}}  -  </span>
+    <strong>Edad : </strong>
+    <span>{{usuario.edad}}</span>
+  </div>
+
+  <button class="btn btn-danger" (click)="onDeeleteCharacter(usuario.id)">x</button>
+
+  </li>
+
+</ul>

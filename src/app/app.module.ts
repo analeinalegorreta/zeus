@@ -21,6 +21,8 @@ import { FormularioComponent } from './component/formulario/formulario.component
 import { OnlyNumber } from './directive/onlyNumber';
 import { LoginComponent } from './component/login/login.component';
 import { PagEmPipe } from './pag-em.pipe';
+import { FormuDependComponent } from './component/formu-depend/formu-depend.component';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 
@@ -36,7 +38,8 @@ import { PagEmPipe } from './pag-em.pipe';
     FormularioComponent,
     OnlyNumber,
     LoginComponent,
-    PagEmPipe
+    PagEmPipe,
+    FormuDependComponent
 
   ],
   imports: [
@@ -45,6 +48,7 @@ import { PagEmPipe } from './pag-em.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    UsuariosModule
   ],
   providers: [
     HeroinasService
